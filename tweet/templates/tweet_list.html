@@ -21,10 +21,12 @@ Tweet
           <p class="username">@{{tweet.user.username}} </p>
           <h5 class="card-title text-primary">{{ tweet.title }}</h5>
           <p class="card-text">{{ tweet.text }}</p>
+          {%if tweet.user == user%}
           <div class="mt-auto d-flex justify-content-between">
             <a href="{% url 'edit_tweet' tweet.id %}" class="btn btn-outline-primary btn-sm">Edit</a>
             <a href="{% url 'delete_tweet' tweet.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
           </div>
+          {%endif%}
         </div>
       </div>
     </div>

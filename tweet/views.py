@@ -26,19 +26,21 @@ def create_tweet(request):
     else:
         form = TweetForm()
     return render(request, 'tweet_form.html',{'form':form})
+
 @login_required
 def edit_tweet(request, tweet_id):
-    tweet = get_object_or_404(Tweet,pk=tweet_id,user = request.user)
-    if(request.method == 'POST'):
-        form = TweetForm(request.POST,request.FILES,instance=tweet)
-        if(form.is_valid()):
+    tweet = get_object_or_404(Tweet, pk=tweet_id, user=request.user)
+    if request.method == 'POST':
+        form = TweetForm(request.POST, request.FILES, instance=tweet)
+        if form.is_valid():
             tweet = form.save(commit=False)
             tweet.user = request.user
             tweet.save()
             return redirect('display_tweet')
     else:
         form = TweetForm(instance=tweet)
-    return render(request, 'tweet_form.html',{'form':form})
+    return render(request, 'tweet_form.html', {'form': form})
+
     
 
 @login_required
@@ -52,7 +54,9 @@ def delete_tweet(request,tweet_id):
 def register(request):
     if( request.method == 'POST'):
         form = UserRegistrationForm(request.POST)
-        if(form.is_valid()):
+        if(form.is_valid(
+
+        )):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password1'])
             user.save()
