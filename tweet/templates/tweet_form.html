@@ -1,0 +1,53 @@
+{% extends "layout.html" %} 
+
+{% block title %} 
+Tweet 
+{% endblock %} 
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold text-primary">Welcome to the Mini Twitter</h1>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-5">
+            <h2 class="mb-4 text-center text-secondary">
+                {% if form.instance.pk %} 
+                    Edit Tweet 
+                {% else %} 
+                    Create Tweet 
+                {% endif %}
+            </h2>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+    
+                <div class="mb-3">
+                    <label for="id_title" class="form-label">Title</label>
+                    <input type="text" name="title" class="form-control form-control-lg" id="id_title" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_text" class="form-label">Text</label>
+                    <textarea name="text" class="form-control" id="id_text" rows="3" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_photo" class="form-label">Photo</label>
+                    <input type="file" name="photo" class="form-control" id="id_photo">
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-warning btn-lg px-5" type="submit">Submit</button>  
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <a href="{% url 'display_tweet' %}" class="btn btn-outline-primary">Back to Tweets</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
