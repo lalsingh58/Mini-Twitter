@@ -1,22 +1,33 @@
-🐦 Mini Twitter
-A minimal clone of Twitter built with Django and styled using Bootstrap 5. Users can create, edit, and view tweets, optionally attaching a photo. This project includes user authentication, a clean UI, and a professional responsive navbar.
+# **🐦 Mini Twitter**
 
-🚀 Features
-📝 Create and Edit Tweets — with title, text, and optional photo.
+A try to build basic version of Twitter built with **Django** and styled using **Bootstrap 5**.  
+Users can create, edit, and view tweets, optionally attaching a photo.  
+This project includes user authentication, a clean UI, and a professional responsive navbar.
 
-🧾 View All Tweets — see tweets posted by all users.
+---
 
-📸 Photo Upload — attach images to your tweets.
+## 🚀 **Features**
 
-🔐 User Authentication — secure login, logout, and registration.
+- 📝 **Create and Edit Tweets** — with title, text, and optional photo.
+- 🧾 **View All Tweets** — see tweets posted by all users.
+- 📸 **Photo Upload** — attach images to your tweets.
+- 🔐 **User Authentication** — secure login, logout, and registration.
+- 🎨 **Professional UI** — styled using Bootstrap 5 and fully responsive.
 
-🎨 Professional UI — styled using Bootstrap 5 and responsive design.
+---
 
-🛠️ Tech Stack
-Backend: Django (Python)
+## 🛠️ **Tech Stack**
 
-Frontend: HTML, CSS, Bootstrap 5
+- **Backend:** Django (Python)  
+- **Frontend:** HTML, CSS, Bootstrap 5  
+- **Database:** SQLite (default with Django)  
+- **Template Engine:** Django Templates
 
-Database: SQLite (default with Django)
+---
 
-Template Engine: Django Templates
+## 📦 **Setup Instructions**
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/mini-twitter.git
+   cd mini-twitter
